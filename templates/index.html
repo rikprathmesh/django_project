@@ -1,0 +1,589 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/332a215f17.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <title>@Mk Restaurant</title>
+    </head>
+
+    <body>
+        <!--navbar section-->
+        <div id="head" class="head">
+            <div id="menu-bar" onclick="onclickmenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+                <ul id="nav" class="nav">
+                    <li><a href="#home" class="active">home</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#menu">dishes</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    <li><a href="{% url 'menu' %}">menu</a></li>
+                    <li><a href="#">{{userlog}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--end of navbar-->
+        <!--header-->
+        <header class="header" id="home">
+            <div class="hero">
+                <h1 class="title">@Mk Restaurant</h1>
+                <a href="#Book A Table" class="hero-button pulsate" id=""
+                    >BOOK A TABLE</a
+                >
+            </div>
+        </header>
+        <!--end of header-->
+
+        <!--aboutus section-->
+        <section id="about">
+            <div>
+                <h2 class="title-text">About Us</h2>
+            </div>
+            <div class="about-center">
+                <!--start of the article-->
+                <article class="about">
+                    <div class="about-icons">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="about-sub-title">Drinks</h2>
+                        <p class="about-info">
+                            "A cold drink is the answer to most problems."
+                        </p>
+                    </div>
+                </article>
+                <!--end of the article-->
+                <!--start of the article-->
+                <article class="about">
+                    <div class="about-icons">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="about-sub-title">Healthy Food</h2>
+                        <p class="about-info">
+                            "Your diet is a bank account. Good food choices are
+                            good investments."
+                        </p>
+                    </div>
+                </article>
+                <!--end of the article-->
+
+                <!--start of the article-->
+                <article class="about">
+                    <div class="about-icons">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="about-sub-title">Organic Food</h2>
+                        <p class="about-info">
+                            Taste and style is beyond clothes. It's in food;
+                            it's in quality. Working out, healthy bodies,
+                            organic food-they're all part of the same thing.
+                        </p>
+                    </div>
+                </article>
+                <!--end of the article-->
+
+                <!--start of the article-->
+                <article class="about">
+                    <div class="about-icons">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="about-sub-title">White Meat</h2>
+                        <p class="about-info">
+                            Not eating meat is a decision, eating meat is an
+                            instinct.
+                        </p>
+                    </div>
+                </article>
+                <!--end of the article-->
+
+                <!--start of the article-->
+                <article class="about">
+                    <div class="about-icons">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="about-sub-title">Sea-food</h2>
+                        <p class="about-info">
+                            Seafood makes you live 10 years more.
+                        </p>
+                    </div>
+                </article>
+                <!--end of the article-->
+
+                <!--start of the article-->
+                <article class="about">
+                    <div class="about-icons">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="about-sub-title">Hot & Spicy</h2>
+                        <p class="about-info">
+                            it's like spicy food sometimes you have to tone it
+                            down so more people can enjoy it.
+                        </p>
+                    </div>
+                </article>
+                <!--end of the article-->
+            </div>
+        </section>
+        <!--end of aboutus-->
+        <!--menusection-->
+        <section class="menu">
+            <article class="menu-image"></article>
+            <article class="menu-text">
+                <div class="menu-text-center">
+                    <h1>our menu</h1>
+                    <p>
+                        we have good food variety if you are a food lover then
+                        come and enjoy with us on every sunday we are giving
+                        some discounts on non-veg food
+                    </p>
+                    <a href="#">Explore</a>
+                </div>
+            </article>
+        </section>
+        <!--end of menu sectoin-->
+        <!--social icons-->
+        <section id="social-icons">
+            <a href="https://www.facebook.com/mk.restro"
+                ><i class="fab fa-facebook facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/mk_restro/"
+                ><i class="fab fa-instagram instagram"></i
+            ></a>
+            <a
+                href="https://www.google.com/search?q=%40mk%20restaurant%20vashi%20naka&rlz=1C1CHBD_enIN930IN930&sxsrf=ALeKk009-q2wDaV2K_5ElXmmbeyestD1ZQ:1616203972901&ei=dFBVYI-tEI_iz7sP-vae-AI&oq=%40mk+restaurant+vashi+naka&gs_lcp=Cgdnd3Mtd2l6EAM6BwgjELADECc6BwgAEEcQsAM6BggAEBYQHjoJCAAQyQMQFhAeOgUIIRCgAToHCCEQChCgAVCDsgJYtdACYPjXAmgBcAJ4AIABgwKIAc0NkgEGMC4xMC4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz&ved=2ahUKEwiNtsH93L3vAhV863MBHWT4AEoQvS4wAHoECAMQJQ&uact=5&tbs=lf:1,lf_ui:4&tbm=lcl&rflfq=1&num=10&rldimm=10827185604662523635&lqi=ChlAbWsgcmVzdGF1cmFudCB2YXNoaSBuYWthIgOIAQFIkIbQuICygIAIWjMKDkBtayByZXN0YXVyYW50EAAQARgAGAEiGUBtayByZXN0YXVyYW50IHZhc2hpIG5ha2GSAQpyZXN0YXVyYW50&rlst=f#rlfi=hd:;si:10827185604662523635,l,ChlAbWsgcmVzdGF1cmFudCB2YXNoaSBuYWthIgOIAQFIkIbQuICygIAIWjMKDkBtayByZXN0YXVyYW50EAAQARgAGAEiGUBtayByZXN0YXVyYW50IHZhc2hpIG5ha2GSAQpyZXN0YXVyYW50;mv:[[19.0835974,73.0133985],[19.0066645,72.86084439999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3,lf:1,lf_ui:4"
+                ><i class="fab fa-google-plus plus"></i
+            ></a>
+        </section>
+
+        <!--end of social icons-->
+        <!--number-->
+        <section id="numbers">
+            <article class="number">
+                <i class="fas fa-cloud-meatball"></i>
+                <p>50</p>
+                <h3>meat dishes</h3>
+            </article>
+            <article class="number">
+                <i class="fas fa-cheese"></i>
+                <p>30</p>
+                <h3>cheese dishes</h3>
+            </article>
+            <article class="number">
+                <i class="fas fa-pizza-slice"></i>
+                <p>40</p>
+                <h3>pizzas</h3>
+            </article>
+            <article class="number">
+                <i class="fas fa-ice-cream"></i>
+                <p>25</p>
+                <h3>desserts</h3>
+            </article>
+        </section>
+        <!--end of number-->
+        <!--card section-->
+        <section id="food">
+            <div>
+                <h2 class="title-text">Food Fusion</h2>
+            </div>
+            <div class="food-container">
+                <!--article-->
+                <article class="food-card" id="menu">
+                    <img
+                        src="{% static 'images/menu1.jpg' %}"
+                        class="food-img"
+                        alt=""
+                    />
+                    <div class="img-text">
+                        <h1>breakfast</h1>
+                    </div>
+                    <div class="img-footer">
+                        <div class="footer-icon">
+                            <i class="fas fa fa-rupee">80</i>
+                        </div>
+                        <div class="footer-btn">
+                            <button
+                                href="payment.html"
+                                type="button"
+                                class="food-btn"
+                            >
+                                order now
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!--end of article-->
+                <!--article-->
+                <article class="food-card">
+                    <img
+                        src="{% static 'images/noodles.jpg' %}"
+                        class="food-img"
+                        alt=""
+                    />
+                    <div class="img-text">
+                        <h1>lunch</h1>
+                    </div>
+                    <div class="img-footer">
+                        <div class="footer-icon">
+                            <i class="fas fa fa-rupee">120</i>
+                        </div>
+                        <div class="footer-btn">
+                            <button
+                                href="payment.html"
+                                type="button"
+                                class="food-btn"
+                            >
+                                order now
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!--end of article-->
+                <!--article-->
+                <article class="food-card">
+                    <img
+                        src="{% static 'images/chicken.jpeg' %}"
+                        class="food-img"
+                        alt=""
+                    />
+                    <div class="img-text">
+                        <h1>dinner</h1>
+                    </div>
+                    <div class="img-footer">
+                        <div class="footer-icon">
+                            <i class="fas fa fa-rupee">150</i>
+                        </div>
+                        <div class="footer-btn">
+                            <button
+                                href="payment.html"
+                                type="button"
+                                class="food-btn"
+                            >
+                                order now
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!--end of article-->
+            </div>
+        </section>
+        <!--end of card seciton-->
+
+        <!--contact us form-->
+
+        <div class="contact-us-form" id="contact">
+            <h1>contact us</h1>
+            <form method="POST" action="{% url 'index' %}">
+                {% csrf_token %}
+                <input
+                    class="contact-form-txt"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                />
+                <input
+                    class="contact-form-txt"
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                />
+                <textarea
+                    class="contact-form-txtarea"
+                    id="feedback"
+                    name="feedback"
+                    placeholder="Feedback in words"
+                ></textarea>
+                <input class="contact-form-btn" type="submit" name="submit" />
+            </form>
+        </div>
+
+        <div class="tool">
+            <div class="sm-tool">
+                <p>shop no.23,manish vijay commercial complex</p>
+                <a href="#"
+                    ><i class="bi bi-geo-alt"></i>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-geo-alt"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                        />
+                        <path
+                            d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                        />
+                    </svg>
+                </a>
+            </div>
+            <div class="sm-tool">
+                <p>Gmail <strong>mk.restaurant@gmail.com</strong></p>
+                <a href="#"
+                    ><i class="bi bi-envelope"></i>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-envelope"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"
+                        />
+                    </svg>
+                </a>
+            </div>
+            <div class="sm-tool">
+                <p>Contact <strong>+9152241778</strong></p>
+                <a href="#"
+                    ><i class="bi bi-telephone"></i>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-telephone"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                        />
+                    </svg>
+                </a>
+            </div>
+            <div class="sm-tool">
+                <p>Monday-Saturday<br />11.00am to 10.00pm</p>
+                <a href="#"
+                    ><i class="bi bi-clock"></i>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-clock"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                        />
+                        <path
+                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                        />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!--end of contact us form-->
+
+        <!--gallery section-->
+        <section id="gallery">
+            <div>
+                <h2 class="title-text">Gallery</h2>
+            </div>
+            <div id="gallery-center">
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery1.jpg' %}">
+                        <img
+                            src="{% static 'images/gallery1.jpg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery2.jpg' %}">
+                        <img
+                            src="{% static 'images/gallery2.jpg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery3.jpg' %}">
+                        <img
+                            src="{% static 'images/gallery3.jpg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery4.jpg' %}">
+                        <img
+                            src="{% static 'images/gallery4.jpg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery5.jpg' %}">
+                        <img
+                            src="{% static 'images/gallery5.jpg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery6.jpg' %}">
+                        <img
+                            src="{% static 'images/gallery6.jpg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="{% static 'images/gallery7.jpeg' %}">
+                        <img
+                            src="{% static 'images/gallery7.jpeg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+                <article class="gallery-item">
+                    <a href="images/gallery8.jpeg">
+                        <img
+                            src="{% static 'images/gallery8.jpeg' %}"
+                            alt=""
+                            height="300px"
+                            width="400px"
+                        />
+                    </a>
+                </article>
+            </div>
+        </section>
+        <!--end of gallery section-->
+
+        <!--booking table-->
+        <section class="book" id="book">
+            <article class="book-table"></article>
+            <article class="book-text">
+                <div class="book-text-center">
+                    <h1>terms and conditions</h1>
+                    <p>
+                        if you want to booking here, then u must be pay atleast
+                        half payment when you booked table and maximum 2hrs we
+                        will give for per booking we are celebrate birthday,
+                        anniversary and any other family parties
+                    </p>
+                </div>
+            </article>
+        </section>
+        <!--end of booking table-->
+
+        <!--booking for customer-->
+        <div class="book-customer" id="Book A Table">
+            <h1>Book a Table</h1>
+        </div>
+        <div class="world">
+            <form action="{% url 'booking1' %}" method="POST">
+                {% csrf_token %}
+                <input
+                    class="booking"
+                    type="text"
+                    id="bname"
+                    name="bname"
+                    placeholder="Name"
+                />
+                <input
+                    class="booking"
+                    type="text"
+                    id="bemail"
+                    name="bemail"
+                    placeholder="Email"
+                />
+                <input
+                    class="booking"
+                    type="text"
+                    id="bphone"
+                    name="phone"
+                    placeholder="Phone"
+                />
+                <input
+                    class="booking"
+                    type="text"
+                    id="bdate"
+                    name="date"
+                    placeholder="Date"
+                />
+                <input
+                    class="booking"
+                    type="text"
+                    id="btime"
+                    name="time"
+                    placeholder="Time"
+                />
+                <input
+                    class="booking"
+                    type="text"
+                    id="bpeople"
+                    name="people"
+                    placeholder="# of people"
+                />
+                <textarea
+                    class="booking-txtarea"
+                    id="bmsg"
+                    name="msg"
+                    placeholder="Message"
+                ></textarea
+                ><br />
+
+                <input class="booking-btn" type="submit" />
+                <a
+                    href="{% url 'registration1' %}"
+                    class="booking-btn hard-btn"
+                    id=""
+                    >have u registered</a
+                >
+            </form>
+        </div>
+        <!--end of booking of customer-->
+
+        <!--footer section-->
+        <footer class="footer">
+            <div class="section-center">
+                <p class="text">&copy;<span>Food for health</span></p>
+            </div>
+        </footer>
+        <!--end of footer-->
+
+        <script src="{% static 'onclickmenu.js' %}"></script>
+    </body>
+</html>

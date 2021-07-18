@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="mainname">
+        <h1>Log In</h1>
+    </div>
+    <div class="login">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %} enter email
+            <input class="taken" type="email" name="lemail" placeholder="Enter email" required />
+            <br /> password
+            <input class="taken" type="password" name="lpassword" placeholder="password" required />
+            <br />
+            <input class="btn-btn" type="submit" name="loginuser" />
+            <a href="{% url 'registration1' %}">
+                <input class="btn-btn-1" type="button" value="Register" />
+            </a>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="section-center">
+            <p class="text">&copy;<span>Food for health</span></p>
+        </div>
+    </footer>
+    <!--end of footer-->
+
+    <script src="{% static 'onclickmenu.js' %}"></script>
+</body>
+
+</html>

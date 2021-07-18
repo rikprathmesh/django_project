@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+
+    <title>Register Here</title>
+</head>
+
+<body>
+    <!--navbar section-->
+    <div id="head" class="head">
+        <div id="menu-bar" onclick="onclickmenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+            <ul id="nav" class="nav">
+                <li><a href="#home" class="active">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#menu">menu</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ======= rigistration Section ======= -->
+    <div class="point">
+        <h1>register here</h1>
+    </div>
+    <div class="registerform">
+        <form action="{% url 'registration1' %}" method="POST">
+            {% csrf_token %}
+            <input class="register" type="text" id="reg_name" name="reg_name" placeholder="registration name" required><br>
+            <input class="register" type="text" id="reg_lname" name="reg_lname" placeholder="registration last name" required><br>
+            <input class="register" type="text" id="reg_email" name="reg_email" placeholder="registration email" required><br>
+            <input class="register" type="text" id="reg_contact" name="reg_contact" placeholder="registration contact number" required><br>
+            <input class="register" type="password" id="reg_password1" name="reg_password1" placeholder="your password" required><br>
+            <input class="register" type="password" id="reg_password2" name="reg_password2" placeholder="confirm your password" required><br>
+            <input class="register-btn" type="submit" name="register">
+
+
+        </form>
+    </div>
+
+
+
+    <!--footer startiong-->
+    <footer class="footer">
+        <div class="section-center">
+            <p class="text">&copy;<span>Food for health</span></p>
+        </div>
+    </footer>
+    <!--end of footer-->
+
+    <script src="{% static 'onclickmenu.js' %}"></script>
+</body>
+
+</html>
